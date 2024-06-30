@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     },
 
     description:
-        "Situé à Grenoble, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
+        "Étudiant, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
     openGraph: {
         title: "Noé Peutot",
         description:
-            "Situé à Grenoble, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
+            "Étudiant à Grenoble, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
         url: "",
         siteName: "Portfolio",
         images: "/og.png",

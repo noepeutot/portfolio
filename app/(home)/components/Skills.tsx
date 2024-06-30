@@ -4,25 +4,21 @@ import Title from "@/app/(home)/components/Title";
 import {HoverEffect} from "@/components/ui/card-hover-effect";
 import {
     SiAngular, SiCodeigniter,
-    SiCplusplus,
+    SiCplusplus, SiHtml5,
     SiJavascript,
     SiMongodb, SiMysql,
-    SiNextdotjs,
     SiPhp,
-    SiPostgresql, SiPython,
-    SiReact, SiSymfony,
-    SiTypescript
+    SiPostgresql, SiPython, SiSymfony,
 } from "react-icons/si";
+
+import {FaJava} from "react-icons/fa";
+
 
 export default function Skills() {
     const skills = [
         {
             text: "Angular",
             Icon: SiAngular
-        },
-        {
-            text: "React",
-            Icon: SiReact
         },
         {
             text: "CodeIgniter",
@@ -33,14 +29,6 @@ export default function Skills() {
             Icon: SiSymfony
         },
         {
-            text: "Next.js",
-            Icon: SiNextdotjs
-        },
-        {
-            text: "TypeScript",
-            Icon: SiTypescript
-        },
-        {
             text: "JavaScript",
             Icon: SiJavascript
         },
@@ -49,16 +37,20 @@ export default function Skills() {
             Icon: SiPhp
         },
         {
-            text: "Python",
-            Icon: SiPython
+            text: "HTML",
+            Icon: SiHtml5
         },
         {
             text: "Java",
-            Icon: SiPhp
+            Icon: FaJava
         },
         {
             text: "C++",
             Icon: SiCplusplus
+        },
+        {
+            text: "Python",
+            Icon: SiPython
         },
         {
             text: "PostgreSQL",
@@ -75,7 +67,7 @@ export default function Skills() {
     ]
     return (
         <div className="max-w-5xl mx-auto px-8">
-            <Title text={"Compétences 🔪"} className="flex flex-col items-center justify-center -rotate-6"/>
+            <Title text={"Compétences 🧠"} className="flex flex-col items-center justify-center -rotate-6"/>
             <HoverEffect items={skills}/>
         </div>
     );

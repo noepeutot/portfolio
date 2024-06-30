@@ -1,9 +1,8 @@
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {
     SiAngular, SiBootstrap,
     SiCodeigniter,
     SiJavascript, SiJquery,
-    SiNextdotjs,
     SiPhp,
     SiPostgresql,
     SiPython,
@@ -113,15 +112,10 @@ export default function Projects() {
             title: "Trombinoscope",
             tech: [SiCodeigniter, SiBootstrap, SiJquery],
             description: "Dans le cadre de ma formation en BUT Informatique, j'ai eu l'opportunité d'effectuer un stage au laboratoire G2Elab à Grenoble, spécialisé dans l'ingénierie électrique. Mon stage s'est déroulé au service informatique, où j'ai été chargé de développer un nouveau trombinoscope pour le laboratoire, destiné à remplacer une version obsolète datant de vingt ans. L'objectif principal était de créer un site moderne et dynamique permettant aux utilisateurs de mettre à jour leurs informations personnelles de manière sécurisée, avec validation par les administrateurs.\n" +
-                "\n" +
                 "Pour ce projet, j'ai développé une interface utilisateur intuitive en utilisant les couleurs du laboratoire pour rendre le site attractif. Le site permet aux utilisateurs de mettre à jour leurs informations personnelles avec chaque modification nécessitant une validation par les administrateurs. J'ai également intégré une barre de recherche et des filtres avancés pour faciliter la navigation et la recherche de personnel par statut, équipe ou tutelle.\n" +
-                "\n" +
                 "Le backoffice permet aux administrateurs et modérateurs de gérer les validations et de superviser les modifications apportées par les utilisateurs. Le design de l'interface, inspiré du style minimaliste \"bento\", améliore la clarté visuelle et rend l'expérience utilisateur agréable.\n" +
-                "\n" +
                 "La possibilité de modifier les informations et de télécharger de nouvelles photos de profil a été implémentée avec des contrôles stricts pour garantir la conformité des fichiers.\n" +
-                "\n" +
-                "Ce projet m'a permis de développer mes compétences en développement web, gestion de bases de données et sécurité informatique, tout en contribuant à l'amélioration des outils de gestion du personnel au sein du G2Elab.\n" +
-                "\n",
+                "Ce projet m'a permis de développer mes compétences en développement web, gestion de bases de données et sécurité informatique, tout en contribuant à l'amélioration des outils de gestion du personnel au sein du G2Elab.\n",
             image: [{url: "/projects/trombi/PageAccueil.png"},
                 {url: "/projects/trombi/page_profile.png"},
                 {url: "/projects/trombi/page_modification.png"},

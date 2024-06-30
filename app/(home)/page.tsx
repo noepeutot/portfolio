@@ -5,11 +5,8 @@ import Skills from "@/app/(home)/components/Skills";
 import Projects from "@/app/(home)/components/Projects";
 import Footer from "@/app/(home)/components/footer";
 import Parcours from "@/app/(home)/components/Parcours";
-import {SiGooglescholar} from "react-icons/si";
-import {PiBagSimpleFill} from "react-icons/pi";
 import {FloatingNav} from "@/components/ui/floating-navbar";
 import AboutMe from "@/app/(home)/components/AboutMe";
-import {BsPersonArmsUp} from "react-icons/bs";
 
 export default function Home() {
     const navItems = [
@@ -53,8 +50,8 @@ export default function Home() {
             </div>
             <div className="max-w-7xl mx-auto p-5 mt-20">
                 <AboutMe/>
-                <Skills/>
                 <Projects/>
+                <Skills/>
                 <Parcours/>
                 <Footer/>
             </div>

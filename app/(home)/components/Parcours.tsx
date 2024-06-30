@@ -56,7 +56,7 @@ export default function Parcours() {
                 </div>
             </div>
             <div id="experience" className="max-w-5xl mx-auto px-8">
-                <Title text={"Expériences professionnelles 💼"}
+                <Title text={"Expériences 💼"}
                        className="flex flex-col items-center justify-center rotate-6"/>
                 <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-5">
                     {experience.map((exp, index) => {

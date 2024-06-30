@@ -82,3 +82,13 @@
     border-radius: 50%;
     box-shadow: 0 0 200px 130px #c026d3;
 }
+
+.no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
+}

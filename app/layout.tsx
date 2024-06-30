@@ -7,7 +7,7 @@ import React from "react";
 const space_grotesk = Space_Grotesk({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://next-supabase-vote.vercel.app/"),
+    metadataBase: new URL("https://portfolio-rho-one-49.vercel.app/"),
 
     title: 'Portfolio',
     authors: {
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
         title: "Noé Peutot",
         description:
             "Étudiant à Grenoble, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
-        url: "",
+        url: "https://portfolio-rho-one-49.vercel.app/",
         siteName: "Portfolio",
         images: "/og.png",
         type: "website",
     },
-    keywords: ["daily web coding", "chensokheng", "dailywebcoding"],
+    keywords: ["Portfolio", "Noé Peutot"],
 };
 
 export default function RootLayout({

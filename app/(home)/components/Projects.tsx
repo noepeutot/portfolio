@@ -38,10 +38,10 @@ export default function Projects() {
         }
     ]
     return (
-        <div className="py-10 p-5 sm:p-0">
+        <div id="projet" className="py-10 p-5 sm:p-0">
             <Title text={"Projets 💻"} className="flex flex-col items-center justify-center rotate-6"/>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 pt-20 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-5">
                 {projects.map((project, index) => {
                     return <Link href={project.link} key={index}>
                         <div className={cn("p-5 rounded-md", project.background)}>

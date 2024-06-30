@@ -34,24 +34,24 @@ export default function Projects() {
         {
             title: "Space Charity",
             tech: [SiJavascript, SiPhp, SiPostgresql],
-            description: ["Durant ma deuxième année de BUT Informatique, j'ai eu comme projet de réaliser une application d'enchère en ligne. ",
-                "En équipe de 6, il a été réalisé Space Charity, une application d'enchère en ligne pour des planètes. ",
-                "Dans le contexte de l'application, elle avait pour objectif la récolte d’argent au profit d’association de lutte pour l’environnement, car c’est un enjeu majeur de notre futur. ",
-                "Cela aidera à compenser la pollution créée par l’industrie de l’espace, c’est pour cela que la récolte de fonds se fait via des astres, le thème global est donc l’espace. ",
-                "Cette vente aux enchères se déroulera plusieurs fois par an, le temps de quelques jours. ",
-                "Entre deux évènements, le propriétaire d’une planète reste le même, et peut donner un surnom à sa planète. ",
-                "Au début d’un nouvel évènement, les planètes sont toutes remises aux enchères. ",
-                "Pendant l’évènement, les astres sont regroupés par lots, appelés vagues. ",
-                "Chaque vague à une durée déterminée, souvent de quelques heures, durant lesquelles les utilisateurs peuvent enchérir sur les différents astres. ",
-                "Ces enchères sont montantes, et commencent à un montant minimum, différent pour chaque astre. ",
-                "Chacun peut enchérir un montant de 0 à 1000€, et dans le cas où une autre personne aurait déjà enchérit dans les 2 minutes précédentes, ",
-                "l’utilisateur a environ 30 secondes pour : ",
-                "Annuler son enchère, ",
-                "Confirmer son enchère (avec un nouveau prix si le prix a été modifié entre-temps). ",
-                "En effet, il a pu y avoir des enchères simultanées qui n’ont pas été actualisées à temps. ",
-                "Le message de confirmation d’enchère permet d’afficher le nouveau prix si une autre enchère est effectivement arrivée en même temps. ",
-                "Confirmer son enchère (avec un nouveau prix si le prix a été modifié entre-temps). ",
-                "En effet, il a pu y avoir des enchères simultanées qui n’ont pas été actualisées à temps. Le message de confirmation d’enchère permet d’afficher le nouveau prix si une autre enchère est effectivement arrivée en même temps. "],
+            description: "Durant ma deuxième année de BUT Informatique, j'ai eu comme projet de réaliser une application d'enchère en ligne. " +
+                "En équipe de 6, il a été réalisé Space Charity, une application d'enchère en ligne pour des planètes. " +
+                "Dans le contexte de l'application, elle avait pour objectif la récolte d’argent au profit d’association de lutte pour l’environnement, car c’est un enjeu majeur de notre futur. "+
+                "Cela aidera à compenser la pollution créée par l’industrie de l’espace, c’est pour cela que la récolte de fonds se fait via des astres, le thème global est donc l’espace. "+
+                "Cette vente aux enchères se déroulera plusieurs fois par an, le temps de quelques jours. " +
+                "Entre deux évènements, le propriétaire d’une planète reste le même, et peut donner un surnom à sa planète. "+
+                "Au début d’un nouvel évènement, les planètes sont toutes remises aux enchères. "+
+                "Pendant l’évènement, les astres sont regroupés par lots, appelés vagues. "+
+                "Chaque vague à une durée déterminée, souvent de quelques heures, durant lesquelles les utilisateurs peuvent enchérir sur les différents astres. "+
+                "Ces enchères sont montantes, et commencent à un montant minimum, différent pour chaque astre. "+
+                "Chacun peut enchérir un montant de 0 à 1000€, et dans le cas où une autre personne aurait déjà enchérit dans les 2 minutes précédentes, "+
+                "l’utilisateur a environ 30 secondes pour : "+
+                "Annuler son enchère, "+
+                "Confirmer son enchère (avec un nouveau prix si le prix a été modifié entre-temps). "+
+                "En effet, il a pu y avoir des enchères simultanées qui n’ont pas été actualisées à temps. "+
+                "Le message de confirmation d’enchère permet d’afficher le nouveau prix si une autre enchère est effectivement arrivée en même temps. "+
+                "Confirmer son enchère (avec un nouveau prix si le prix a été modifié entre-temps). "+
+                "En effet, il a pu y avoir des enchères simultanées qui n’ont pas été actualisées à temps. Le message de confirmation d’enchère permet d’afficher le nouveau prix si une autre enchère est effectivement arrivée en même temps. ",
             image: [{url: "/projects/spacecharity/PageAccueil.png"},
                 {url: "/projects/spacecharity/planete.png"},
                 {url: "/projects/spacecharity/classement.png"},

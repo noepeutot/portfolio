@@ -15,7 +15,7 @@ export default function Parcours() {
             title: "Baccalauréat Scientifique",
             place: "Lycée Champollion",
             date: "2020",
-            description: "Spécialité Mathématiques et Physique-Chimie."
+            description: "Mention Bien. Spécialité Mathématiques et Physique-Chimie."
         }
     ]
 

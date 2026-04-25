@@ -1,50 +1,59 @@
-import type {Metadata} from "next";
-import {Space_Grotesk} from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { GeistPixelSquare } from "geist/font/pixel";
+import { Providers } from "@/app/components/providers";
 import "./globals.css";
-import {ThemeProvider} from "@/components/theme-provider";
-import React from "react";
 
-const space_grotesk = Space_Grotesk({subsets: ["latin"]});
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://portfolio-rho-one-49.vercel.app/"),
-
-    title: 'Portfolio',
-    authors: {
-        name: "Noé Peutot",
-    },
-
-    description:
-        "Étudiant, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
-    openGraph: {
-        title: "Noé Peutot",
-        description:
-            "Étudiant à Grenoble, je suis un développeur web fullstack passionné par la création de sites web et d'applications web.",
-        url: "https://portfolio-rho-one-49.vercel.app/",
-        siteName: "Portfolio",
-        images: "/og.png",
-        type: "website",
-    },
-    keywords: ["Portfolio", "Noé Peutot"],
+  title: "Noé Peutot — Développeur Web Fullstack",
+  description:
+    "Portfolio de Noé Peutot, développeur web fullstack basé à Grenoble. Étudiant en BUT Informatique, passionné par le développement web et les nouvelles technologies.",
+  keywords: [
+    "Noé Peutot",
+    "développeur web",
+    "fullstack",
+    "Grenoble",
+    "portfolio",
+    "BUT Informatique",
+  ],
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
+  children,
+}: Readonly<{
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en" suppressHydrationWarning>
-        <body className={space_grotesk.className}>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-        >
-            {children}
-        </ThemeProvider>
-        </body>
-        </html>
-    );
+  return (
+    <html
+      lang="fr"
+      className={`${geistSans.variable} ${geistMono.variable} ${GeistPixelSquare.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.theme==='dark'||((!('theme' in localStorage)||localStorage.theme==='system')&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(_){}`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
 }

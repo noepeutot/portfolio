@@ -1,6 +1,6 @@
 import React from 'react';
 import {SiGithub} from "react-icons/si";
-import {SiLinkedin} from "react-icons/si";
+import {FaLinkedin} from "react-icons/fa";
 import Link from "next/link";
 import {cn} from "@/lib/utils";
 
@@ -9,7 +9,7 @@ export default function Navbar({className}: { className?: string }) {
         {
             link: "https://www.linkedin.com/in/noe-peutot/",
             label: "Linkeddin",
-            icon: SiLinkedin,
+            icon: FaLinkedin,
         },
         {
             link: "https://github.com/noepeutot",

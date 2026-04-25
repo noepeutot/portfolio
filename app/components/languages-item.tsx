@@ -7,8 +7,8 @@ export function LanguagesItem() {
     <div className="flex items-center gap-4 font-mono text-sm">
       <IconBadge icon={LanguagesIcon} />
       <p className="text-balance">
-        <Tooltip content="Français (natif) · Anglais (B2)">
-          Français, Anglais
+        <Tooltip content="Français (natif) · Anglais (B2) · Laotien (origine)">
+          Français, Anglais, Laotien
         </Tooltip>
       </p>
     </div>

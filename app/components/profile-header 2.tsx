@@ -47,7 +47,7 @@ export function ProfileHeader() {
                 animate: { y: -1, opacity: 1 },
                 exit: { y: 10, opacity: 0 },
               }}
-              interval={3.5}
+              interval={1.5}
             >
               {USER.flipSentences}
             </TextFlip>

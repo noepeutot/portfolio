@@ -49,7 +49,7 @@ export function PanelTitle({
     <h2 className={cn("text-3xl font-semibold tracking-tight", className)}>
       {children}
       {count !== undefined && (
-        <sup className="-top-[0.75em] ml-1 text-sm font-medium tabular-nums tracking-normal text-muted-foreground">
+        <sup className="-top-[0.75em] ml-1 text-sm font-medium tracking-normal text-muted-foreground">
           ({count})
         </sup>
       )}

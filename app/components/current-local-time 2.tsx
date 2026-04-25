@@ -81,7 +81,7 @@ export function CurrentLocalTime({ timeZone }: { timeZone: string }) {
       <IconBadge icon={ClockIcon} />
       <p className="text-balance">
         <Tooltip content={timeZone}>
-          <span className="tabular-nums">{clock.timeString}</span>
+          {clock.timeString}
         </Tooltip>
         <span className="text-muted-foreground" aria-hidden>
           {clock.diffText}

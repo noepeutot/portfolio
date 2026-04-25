@@ -3,14 +3,13 @@ export type TechStack = {
   title: string;
   href: string;
   localIcon?: string;
-  whiteOnDark?: boolean;
 };
 
 export const TECH_STACK: TechStack[] = [
-  { key: "angular", title: "Angular", href: "https://angular.io/", whiteOnDark: true },
-  { key: "symfony", title: "Symfony", href: "https://symfony.com/", whiteOnDark: true },
+  { key: "angular", title: "Angular", href: "https://angular.io/" },
+  { key: "symfony", title: "Symfony", href: "https://symfony.com/" },
   { key: "codeigniter", title: "CodeIgniter", href: "https://codeigniter.com/" },
-  { key: "nextdotjs", title: "Next.js", href: "https://nextjs.org/", whiteOnDark: true },
+  { key: "nextdotjs", title: "Next.js", href: "https://nextjs.org/" },
   { key: "javascript", title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
   { key: "typescript", title: "TypeScript", href: "https://www.typescriptlang.org/" },
   { key: "php", title: "PHP", href: "https://www.php.net/" },
@@ -26,5 +25,5 @@ export const TECH_STACK: TechStack[] = [
   { key: "docker", title: "Docker", href: "https://www.docker.com/" },
   { key: "react", title: "React", href: "https://react.dev/" },
   { key: "tailwindcss", title: "Tailwind CSS", href: "https://tailwindcss.com/" },
-  { key: "nodedotjs", title: "Node.js", href: "https://nodejs.org/" },
+  { key: "nodedotjs", title: "Node.js", href: "https://nodejs.org/" },  
 ];

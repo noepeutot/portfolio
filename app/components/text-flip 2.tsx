@@ -1,7 +1,7 @@
 "use client";
 
 import type { Transition, Variants } from "motion/react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Children, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -25,18 +25,15 @@ export function TextFlip({
   variants?: Variants;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const reducedMotion = useReducedMotion();
   const items = Children.toArray(children);
 
   useEffect(() => {
-    if (paused || reducedMotion) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);
     }, interval * 1000);
 
     return () => clearInterval(timer);
-  }, [items.length, interval, paused, reducedMotion]);
+  }, [items.length, interval]);
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -46,10 +43,8 @@ export function TextFlip({
         initial="initial"
         animate="animate"
         exit="exit"
-        transition={reducedMotion ? { duration: 0 } : transition}
+        transition={transition}
         variants={variants}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
       >
         {items[currentIndex]}
       </motion.p>

@@ -83,7 +83,7 @@ function SocialLinkItem({ link }: { link: SocialLink }) {
         </div>
       )}
       <h3 className="flex-1 font-medium">{link.title}</h3>
-      <ArrowUpRightIcon className="size-4 text-muted-foreground transition-[rotate] duration-150 group-hover:rotate-45" />
+      <ArrowUpRightIcon className="size-4 text-muted-foreground transition-[rotate] duration-300 group-hover:rotate-45" />
     </a>
   );
 }

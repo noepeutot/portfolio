@@ -16,50 +16,19 @@ function TechIcon({ tech }: { tech: (typeof TECH_STACK)[number] }) {
           target="_blank"
           rel="noopener"
           aria-label={tech.title}
-          className="flex size-8 items-center justify-center rounded transition-transform active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          className="flex size-8 items-center justify-center"
         >
           {hasError ? (
             <span className="flex size-8 items-center justify-center rounded bg-muted text-[10px] font-medium text-muted-foreground">
               {tech.title.slice(0, 2)}
             </span>
-          ) : tech.localIcon ? (
-            <img
-              src={tech.localIcon}
-              alt={tech.title}
-              width={32}
-              height={32}
-              className="size-8"
-              loading="lazy"
-              onError={() => setHasError(true)}
-            />
-          ) : tech.whiteOnDark ? (
-            <>
-              <img
-                src={`https://cdn.simpleicons.org/${tech.key}`}
-                alt={tech.title}
-                width={32}
-                height={32}
-                className="size-8 dark:hidden"
-                loading="lazy"
-                onError={() => setHasError(true)}
-              />
-              <img
-                src={`https://cdn.simpleicons.org/${tech.key}/white`}
-                alt={tech.title}
-                width={32}
-                height={32}
-                className="hidden size-8 dark:block"
-                loading="lazy"
-                onError={() => setHasError(true)}
-              />
-            </>
           ) : (
             <img
-              src={`https://cdn.simpleicons.org/${tech.key}`}
+              src={tech.localIcon ?? `https://cdn.simpleicons.org/${tech.key}`}
               alt={tech.title}
               width={32}
               height={32}
-              className="size-8"
+              className={tech.localIcon ? "size-8" : "size-8 dark:invert dark:brightness-200 dark:contrast-75"}
               loading="lazy"
               onError={() => setHasError(true)}
             />

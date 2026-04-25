@@ -2,7 +2,7 @@ import Markdown from "react-markdown";
 
 export function MarkdownContent({ children }: { children: string }) {
   return (
-    <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none font-mono text-foreground [&_p]:text-pretty [&_li]:text-pretty">
+    <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none font-mono text-foreground">
       <Markdown
         components={{
           a: ({ children, href, ...props }) => (

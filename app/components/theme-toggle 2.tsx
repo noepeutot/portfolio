@@ -51,7 +51,7 @@ export function ThemeToggle() {
     >
       <button
         onClick={toggleTheme}
-        className="flex size-8 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-[colors,transform] hover:bg-muted hover:text-foreground active:scale-95 focus-visible:bg-muted focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="flex size-8 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         aria-label="Changer de thème"
       >
         {resolvedTheme === "dark" ? <SunMediumIcon /> : <MoonIcon />}

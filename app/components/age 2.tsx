@@ -23,7 +23,7 @@ function formatBirthDate(birthDate: string): string {
 export function Age({ birthDate }: { birthDate: string }) {
   return (
     <Tooltip content={formatBirthDate(birthDate)}>
-      <span className="tabular-nums">{getAge(birthDate)}</span> ans
+      {getAge(birthDate)} ans
     </Tooltip>
   );
 }

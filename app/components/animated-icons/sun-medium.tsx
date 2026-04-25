@@ -9,7 +9,7 @@ const pathVariants: Variants = {
   normal: { opacity: 1 },
   animate: (i: number) => ({
     opacity: [0, 1],
-    transition: { delay: i * 0.1, duration: 0.3 },
+    transition: { delay: i * 0.025, duration: 0.18 },
   }),
 };
 

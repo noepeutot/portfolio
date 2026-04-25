@@ -24,7 +24,7 @@ export function Collapsible({
       <button
         onClick={() => setOpen(!open)}
         className={cn(
-          "flex w-full items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-md",
+          "flex w-full items-center text-left",
           !hideChevron && "transition-colors hover:bg-muted/50"
         )}
       >

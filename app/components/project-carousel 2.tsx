@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
@@ -55,7 +54,7 @@ export function ProjectCarousel({
     <div className="space-y-2">
       <div className="group relative overflow-hidden rounded-md border border-line bg-muted/30">
         <div
-          className="flex transition-transform duration-300 ease-in-out"
+          className="flex transition-transform duration-300 ease-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {images.map((src, i) => (
@@ -86,7 +85,7 @@ export function ProjectCarousel({
               type="button"
               onClick={prev}
               aria-label="Image précédente"
-              className="absolute top-1/2 left-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground opacity-100 backdrop-blur-sm transition-all hover:text-foreground active:scale-95 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100"
+              className="absolute top-1/2 left-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground opacity-0 backdrop-blur-sm transition-all hover:text-foreground group-hover:opacity-100 focus:opacity-100"
             >
               <ChevronLeftIcon className="size-4" />
             </button>
@@ -94,12 +93,12 @@ export function ProjectCarousel({
               type="button"
               onClick={next}
               aria-label="Image suivante"
-              className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground opacity-100 backdrop-blur-sm transition-all hover:text-foreground active:scale-95 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100"
+              className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground opacity-0 backdrop-blur-sm transition-all hover:text-foreground group-hover:opacity-100 focus:opacity-100"
             >
               <ChevronRightIcon className="size-4" />
             </button>
 
-            <div className="pointer-events-none absolute right-2 bottom-2 rounded-md border border-line bg-background/80 px-1.5 py-0.5 font-mono text-xs tabular-nums text-muted-foreground backdrop-blur-sm">
+            <div className="pointer-events-none absolute right-2 bottom-2 rounded-md border border-line bg-background/80 px-1.5 py-0.5 font-mono text-xs text-muted-foreground backdrop-blur-sm">
               {index + 1} / {total}
             </div>
           </>
@@ -136,21 +135,16 @@ export function ProjectCarousel({
         </ul>
       )}
 
-      <AnimatePresence>
-        {lightboxOpen && (
-        <motion.div
+      {lightboxOpen && (
+        <div
           role="dialog"
           aria-modal="true"
           aria-label={`${alt} — image ${index + 1} sur ${total}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.18, ease: "easeOut" }}
           className="fixed inset-0 z-50 flex flex-col bg-background/95 backdrop-blur-md"
           onClick={() => setLightboxOpen(false)}
         >
           <div className="flex items-center justify-between border-b border-line px-4 py-3">
-            <div className="font-mono text-xs tabular-nums text-muted-foreground">
+            <div className="font-mono text-xs text-muted-foreground">
               {alt} · {index + 1} / {total}
             </div>
             <button
@@ -160,7 +154,7 @@ export function ProjectCarousel({
                 setLightboxOpen(false);
               }}
               aria-label="Fermer"
-              className="flex size-8 items-center justify-center rounded-md border border-line text-muted-foreground transition-[colors,transform] hover:bg-muted hover:text-foreground active:scale-95"
+              className="flex size-8 items-center justify-center rounded-md border border-line text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               <XIcon className="size-4" />
             </button>
@@ -186,7 +180,7 @@ export function ProjectCarousel({
                   type="button"
                   onClick={prev}
                   aria-label="Image précédente"
-                  className="absolute top-1/2 left-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground backdrop-blur-sm transition-[colors,transform] hover:text-foreground active:scale-95 sm:left-4 sm:size-12"
+                  className="absolute top-1/2 left-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground sm:left-4 sm:size-12"
                 >
                   <ChevronLeftIcon className="size-5" />
                 </button>
@@ -194,7 +188,7 @@ export function ProjectCarousel({
                   type="button"
                   onClick={next}
                   aria-label="Image suivante"
-                  className="absolute top-1/2 right-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground backdrop-blur-sm transition-[colors,transform] hover:text-foreground active:scale-95 sm:right-4 sm:size-12"
+                  className="absolute top-1/2 right-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-md border border-line bg-background/80 text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground sm:right-4 sm:size-12"
                 >
                   <ChevronRightIcon className="size-5" />
                 </button>
@@ -236,9 +230,8 @@ export function ProjectCarousel({
               </ul>
             </div>
           )}
-        </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </div>
   );
 }

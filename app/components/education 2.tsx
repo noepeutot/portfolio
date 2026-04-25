@@ -24,18 +24,18 @@ export function Education() {
                   <h3 className="mb-0.5 font-medium leading-snug">
                     {edu.degree}
                   </h3>
-                  <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span className="font-medium text-foreground/70">
                       {edu.school}
                     </span>
-                    <span className="h-4 w-px bg-border" />
-                    <span className="tabular-nums">
+                    <span className="text-line">|</span>
+                    <span>
                       {edu.period.start}{" "}
                       <span className="font-mono">—</span> {edu.period.end}
                     </span>
                     {edu.honors && (
                       <>
-                        <span className="h-4 w-px bg-border" />
+                        <span className="text-line">|</span>
                         <span className="text-foreground/70">{edu.honors}</span>
                       </>
                     )}

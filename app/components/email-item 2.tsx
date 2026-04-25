@@ -21,7 +21,7 @@ export function EmailItem({ email }: { email: string }) {
       <button
         type="button"
         onClick={() => copy(email)}
-        className="-translate-x-3 cursor-pointer rounded-md p-1 text-muted-foreground opacity-0 transition-[opacity,transform] ease-out hover:text-foreground group-hover:opacity-100 focus-visible:opacity-100 active:scale-95"
+        className="-translate-x-3 cursor-pointer rounded-md p-1 text-muted-foreground opacity-0 transition-opacity ease-out hover:text-foreground group-hover:opacity-100"
         aria-label="Copier l'email"
       >
         {state === "done" ? (

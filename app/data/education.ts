@@ -9,6 +9,13 @@ export type Education = {
 
 export const EDUCATION: Education[] = [
   {
+    id: "master",
+    school: "Université Grenoble Alpes",
+    degree: "Master Mathématiques et informatique appliquées aux sciences humaines et sociales (MIASHS)",
+    period: { start: "2024", end: "2026" },
+    description: "Parcours Informatique et Cognition",
+  },
+  {
     id: "but",
     school: "IUT2 de Grenoble",
     degree: "BUT Informatique",

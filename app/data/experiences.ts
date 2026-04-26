@@ -13,6 +13,7 @@ export type ExperiencePosition = {
 export type Experience = {
   id: string;
   companyName: string;
+  isCurrent?: boolean;
   positions: ExperiencePosition[];
 };
 
@@ -20,7 +21,27 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "me-group",
     companyName: "ME GROUP GSS — Échirolles",
+    isCurrent: true,
     positions: [
+      {
+        id: "2",
+        title: "Développeur IA — Stagiaire M2",
+        employmentPeriod: { start: "04.2026" },
+        employmentType: "Stage",
+        icon: "code",
+        description:
+          "Système multi-agents local pour interroger les données métier (parc de machines) en langage naturel, intégré à un chat Open-WebUI.\n\n- Orchestration de pipeline IA via **LangGraph** (StateGraph, retries, streaming SSE)\n- Agent LLM local **Ollama** pour l'extraction d'intention et la génération de requêtes Elasticsearch\n- Couche NLP de prétraitement : détection de langue + traduction FR→EN (**ArgosTranslate**)\n- Construction dynamique de requêtes **Elasticsearch** avec géocoding (**Google Maps API**)\n- API **FastAPI** asynchrone, pagination scalable et export CSV des résultats",
+        skills: [
+          "Python",
+          "LangGraph",
+          "Ollama",
+          "FastAPI",
+          "Elasticsearch",
+          "Open-WebUI",
+          "ArgosTranslate",
+        ],
+        isExpanded: true,
+      },
       {
         id: "1",
         title: "Développeur Full-Stack — Stagiaire M2",

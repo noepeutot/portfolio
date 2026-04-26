@@ -17,7 +17,7 @@ export const USER = {
   birthDate: "2002-07-28",
   timeZone: "Europe/Paris",
   about: `
-- En stage M2 chez **ME GROUP GSS**, développement d'une solution de **maintenance prédictive** basée sur le machine learning (scikit-learn, FastAPI, React).
+- En stage M2 chez **ME GROUP GSS** : j'intègre **machine learning et agents IA** aux opérations d'un parc de 35 000+ machines.
 - Compétences solides en **développement full-stack**, **data engineering** et **machine learning**.
 - Quatre stages réalisés chez **CERMAV**, **G2Elab**, **LIG** et **ME GROUP**, dans des domaines variés : bioinformatique, outil interne, didactique et industrie.
 - Fan de jeux vidéo et d'animés, sportif dans l'âme.

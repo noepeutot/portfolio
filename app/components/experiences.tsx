@@ -99,7 +99,14 @@ export function Experiences() {
             className="screen-line-bottom scroll-mt-14 space-y-4 py-4"
           >
             <div className="flex items-center gap-3">
-              <span className="flex size-2 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+              {experience.isCurrent ? (
+                <span className="relative flex size-2 shrink-0 items-center justify-center">
+                  <span className="absolute inline-flex size-3 animate-ping rounded-full bg-sky-500 opacity-50" />
+                  <span className="relative inline-flex size-2 rounded-full bg-sky-500" />
+                </span>
+              ) : (
+                <span className="flex size-2 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+              )}
               <h3 className="text-lg font-semibold leading-snug">
                 {experience.companyName}
               </h3>

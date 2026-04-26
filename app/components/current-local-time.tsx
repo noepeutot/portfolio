@@ -18,74 +18,102 @@ import { useEffect, useState } from "react";
 import { IconBadge } from "./icon-badge";
 import { Tooltip } from "./tooltip";
 
-const CLOCK_ICONS: Record<number, React.ComponentType<{ className?: string }>> = {
-  1: Clock1Icon,
-  2: Clock2Icon,
-  3: Clock3Icon,
-  4: Clock4Icon,
-  5: Clock5Icon,
-  6: Clock6Icon,
-  7: Clock7Icon,
-  8: Clock8Icon,
-  9: Clock9Icon,
-  10: Clock10Icon,
-  11: Clock11Icon,
-  12: Clock12Icon,
-};
+const CLOCK_ICONS = [
+  Clock12Icon,
+  Clock1Icon,
+  Clock2Icon,
+  Clock3Icon,
+  Clock4Icon,
+  Clock5Icon,
+  Clock6Icon,
+  Clock7Icon,
+  Clock8Icon,
+  Clock9Icon,
+  Clock10Icon,
+  Clock11Icon,
+];
 
-function computeClock(timeZone: string) {
+function getZoneOffsetMinutes(timeZone: string, at: Date): number {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).formatToParts(at);
+  const get = (t: string) => Number(parts.find((p) => p.type === t)?.value);
+  const asUTC = Date.UTC(
+    get("year"),
+    get("month") - 1,
+    get("day"),
+    get("hour") % 24,
+    get("minute"),
+    get("second"),
+  );
+  return Math.round((asUTC - at.getTime()) / 60000);
+}
+
+function formatDiff(timeZone: string, now: Date): string {
+  const diff = getZoneOffsetMinutes(timeZone, now) + now.getTimezoneOffset();
+  if (diff === 0) return " // même heure";
+  const direction = diff > 0 ? "en avance" : "en retard";
+  const abs = Math.abs(diff);
+  const hours = Math.floor(abs / 60);
+  const minutes = abs % 60;
+  const formatted =
+    minutes === 0 ? `${hours}h` : `${hours}h${String(minutes).padStart(2, "0")}`;
+  return ` // ${formatted} ${direction}`;
+}
+
+function computeTime(timeZone: string) {
   const now = new Date();
-
   const timeString = now.toLocaleTimeString("fr-FR", {
     timeZone,
     hour: "2-digit",
     minute: "2-digit",
   });
-
-  const hour = parseInt(
-    now.toLocaleString("en-US", { timeZone, hour: "numeric", hour12: false })
+  const hour24 = Number(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hour: "numeric",
+      hour12: false,
+    }).format(now),
   );
-  const hour12 = hour % 12 || 12;
-
-  const targetDateStr = now.toLocaleString("en-US", { timeZone });
-  const targetDate = new Date(targetDateStr);
-  const localDateStr = now.toLocaleString("en-US");
-  const localDate = new Date(localDateStr);
-  const minutesDiff = Math.round((targetDate.getTime() - localDate.getTime()) / 60000);
-
-  let diffText: string;
-  if (Math.abs(minutesDiff) < 30) {
-    diffText = " // même heure";
-  } else {
-    const hours = Math.round(Math.abs(minutesDiff) / 60);
-    const isAhead = minutesDiff > 0;
-    diffText = ` // ${hours}h ${isAhead ? "en avance" : "en retard"}`;
-  }
-
-  return { timeString, hour12, diffText };
+  return { now, timeString, hour12: hour24 % 12 };
 }
 
 export function CurrentLocalTime({ timeZone }: { timeZone: string }) {
-  const [clock, setClock] = useState(() => computeClock(timeZone));
+  const [time, setTime] = useState(() => computeTime(timeZone));
+  const [diffText, setDiffText] = useState<string | null>(null);
 
   useEffect(() => {
-    const update = () => setClock(computeClock(timeZone));
+    const update = () => {
+      const next = computeTime(timeZone);
+      setTime(next);
+      setDiffText(formatDiff(timeZone, next.now));
+    };
+    update();
     const interval = setInterval(update, 60000);
     return () => clearInterval(interval);
   }, [timeZone]);
 
-  const ClockIcon = CLOCK_ICONS[clock.hour12];
+  const ClockIcon = CLOCK_ICONS[time.hour12];
 
   return (
     <div className="flex items-center gap-4 font-mono text-sm">
       <IconBadge icon={ClockIcon} />
       <p className="text-balance">
         <Tooltip content={timeZone}>
-          <span className="tabular-nums">{clock.timeString}</span>
+          <span className="tabular-nums">{time.timeString}</span>
         </Tooltip>
-        <span className="text-muted-foreground" aria-hidden>
-          {clock.diffText}
-        </span>
+        {diffText && (
+          <span className="text-muted-foreground" aria-hidden>
+            {diffText}
+          </span>
+        )}
       </p>
     </div>
   );

@@ -74,7 +74,7 @@ export function ProjectCarousel({
                 height={720}
                 sizes="(min-width: 1024px) 720px, 100vw"
                 className="h-auto w-full object-contain"
-                loading={i === 0 ? "eager" : "lazy"}
+                priority={i === 0}
               />
             </button>
           ))}

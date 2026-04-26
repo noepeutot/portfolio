@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   BriefcaseIcon,
   ChevronDownIcon,
@@ -32,9 +33,9 @@ function PositionItem({ position }: { position: ExperiencePosition }) {
       defaultOpen={position.isExpanded}
       hideChevron
       trigger={
-        <div className="group relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-accent-muted">
+        <div className="group relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-10 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-accent-muted">
           <div className="relative z-1 mb-1 flex items-center gap-3">
-            <IconBadge icon={Icon} />
+            <IconBadge icon={Icon} className="ml-2" />
 
             <h4 className="flex-1 font-medium text-balance">
               {position.title}
@@ -42,12 +43,12 @@ function PositionItem({ position }: { position: ExperiencePosition }) {
 
             {hasContent && (
               <div className="shrink-0 text-muted-foreground [&_svg]:size-4">
-                <ChevronDownIcon className="transition-transform duration-150 group-data-[open]:rotate-180" />
+                <ChevronDownIcon className="transition-transform duration-150 group-data-open:rotate-180" />
               </div>
             )}
           </div>
 
-          <div className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 pl-12 text-sm text-muted-foreground">
             {position.employmentType && (
               <>
                 <span>{position.employmentType}</span>
@@ -68,7 +69,7 @@ function PositionItem({ position }: { position: ExperiencePosition }) {
       }
     >
       {hasContent && (
-        <div className="pl-9 pb-2 pt-2 space-y-3">
+        <div className="pl-12 pb-2 pt-2 space-y-3">
           {position.description && (
             <MarkdownContent>{position.description}</MarkdownContent>
           )}
@@ -99,26 +100,56 @@ export function Experiences() {
             className="screen-line-bottom scroll-mt-14 space-y-4 py-4"
           >
             <div className="flex items-center gap-3">
-              {experience.isCurrent ? (
-                <span className="relative flex size-2 shrink-0 items-center justify-center">
-                  <span className="absolute inline-flex size-3 animate-ping rounded-full bg-sky-500 opacity-50" />
-                  <span className="relative inline-flex size-2 rounded-full bg-sky-500" />
-                </span>
+              {experience.logo ? (
+                experience.url ? (
+                  <a
+                    href={experience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative flex size-10 shrink-0 items-center justify-center rounded-md transition-all hover:scale-110 hover:bg-accent/50 focus:scale-95"
+                  >
+                    <Image
+                      src={experience.logo}
+                      alt={`Logo ${experience.companyName}`}
+                      fill
+                      sizes="40px"
+                      className="object-contain p-1"
+                    />
+                  </a>
+                ) : (
+                  <div className="relative flex size-10 shrink-0 items-center justify-center">
+                    <Image
+                      src={experience.logo}
+                      alt={`Logo ${experience.companyName}`}
+                      fill
+                      sizes="40px"
+                      className="object-contain p-1"
+                    />
+                  </div>
+                )
               ) : (
-                <span className="flex size-2 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+                <div className="flex size-10 shrink-0 items-center justify-center p-1">
+                  <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+                </div>
               )}
-              <h3 className="text-lg font-semibold leading-snug">
+              <h3 className="flex items-center gap-3 text-lg font-semibold leading-snug">
                 {experience.companyName}
+                {experience.isCurrent && (
+                  <span className="relative flex size-2 shrink-0 items-center justify-center">
+                    <span className="absolute inline-flex size-3 animate-ping rounded-full bg-sky-500 opacity-50" />
+                    <span className="relative inline-flex size-2 rounded-full bg-sky-500" />
+                  </span>
+                )}
               </h3>
             </div>
 
-            <div className="relative space-y-1 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
+            <div className="relative space-y-1 before:absolute before:left-5 before:h-full before:w-px before:bg-border">
               {experience.positions.map((position) => (
                 <div key={position.id}>
                   <PositionItem position={position} />
 
                   {position.skills && position.skills.length > 0 && (
-                    <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
+                    <ul className="flex flex-wrap gap-1.5 pt-3 pl-12">
                       {position.skills.map((skill) => (
                         <li key={skill} className="flex">
                           <Tag>{skill}</Tag>

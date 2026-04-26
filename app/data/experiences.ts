@@ -13,6 +13,8 @@ export type ExperiencePosition = {
 export type Experience = {
   id: string;
   companyName: string;
+  logo?: string;
+  url?: string;
   isCurrent?: boolean;
   positions: ExperiencePosition[];
 };
@@ -21,6 +23,8 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "me-group",
     companyName: "ME GROUP GSS — Échirolles",
+    logo: "/me-group_logo.svg",
+    url: "https://www.me-group.fr/",
     isCurrent: true,
     positions: [
       {
@@ -70,6 +74,8 @@ export const EXPERIENCES: Experience[] = [
     id: "lig",
     companyName:
       "LIG (Laboratoire d'Informatique de Grenoble) — Saint-Martin-d'Hères",
+    logo: "/lig_logo.svg",
+    url: "https://www.liglab.fr/fr",
     positions: [
       {
         id: "1",
@@ -96,6 +102,8 @@ export const EXPERIENCES: Experience[] = [
     id: "g2elab",
     companyName:
       "G2Elab (Laboratoire de Génie Électrique de Grenoble) — Grenoble",
+    logo: "/g2elab_logo.png",
+    url: "https://g2elab.grenoble-inp.fr/",
     positions: [
       {
         id: "1",
@@ -124,6 +132,8 @@ export const EXPERIENCES: Experience[] = [
     id: "cermav",
     companyName:
       "CERMAV (Centre de Recherches sur les Macromolécules Végétales) — Gières",
+    logo: "/cermav_logo.png",
+    url: "https://cermav.cnrs.fr/",
     positions: [
       {
         id: "1",

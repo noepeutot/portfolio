@@ -2,13 +2,13 @@ export const USER = {
   firstName: "Noé",
   lastName: "Peutot",
   displayName: "Noé Peutot",
-  jobTitle: "Développeur Web Fullstack",
+  jobTitle: "Développeur Web Full-Stack",
   flipSentences: [
-    "Développeur Web Fullstack",
-    "Étudiant en BUT Informatique",
-    "Passionné par le développement web",
+    "Développeur Web Full-Stack",
+    "Étudiant en Master MIASHS",
+    "Intéressé par le développement & l'IA",
   ],
-  bio: "Développeur web fullstack passionné par la création de sites web et d'applications web.",
+  bio: "Développeur web full-stack en fin de Master Informatique & Cognition, intéressé par l'IA appliquée et l'ergonomie des interfaces.",
   location: "Grenoble, France",
   email: "noepeutot@gmail.com",
   linkedin: "https://www.linkedin.com/in/noe-peutot/",
@@ -17,11 +17,10 @@ export const USER = {
   birthDate: "2002-07-28",
   timeZone: "Europe/Paris",
   about: `
-- Étudiant en dernière année de **BUT Informatique** à l'IUT2 de Grenoble, parcours Réalisation d'Applications : Conception, Développement, Validation.
-- Compétences solides en **développement logiciel**, **développement web** et **gestion de bases de données**.
-- Stages chez **CERMAV** et **G2Elab** qui ont confirmé ma passion pour le développement web.
-- Projets variés : applications web, outils de gestion, sites responsifs et interfaces backoffice.
-- Passionné de jeux vidéo depuis toujours, sportif polyvalent : judo, handball, gymnastique, badminton, musculation.
-- Amoureux des voyages et de la découverte de nouvelles cultures.
+- Étudiant en 2ème année de **Master MIASHS** à l'Université Grenoble Alpes, parcours Informatique et Cognition.
+- En stage M2 chez **ME GROUP GSS**, développement d'une solution de **maintenance prédictive** basée sur le machine learning (scikit-learn, FastAPI, React).
+- Compétences solides en **développement full-stack**, **data engineering** et **machine learning**.
+- Quatre stages réalisés chez **CERMAV**, **G2Elab**, **LIG** et **ME GROUP**, dans des domaines variés : bioinformatique, électrotechnique, didactique et industrie.
+- Intéressé par les jeux vidéo et les animés, sportif dans l'âme.
 `,
 };

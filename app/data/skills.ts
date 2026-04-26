@@ -27,4 +27,9 @@ export const TECH_STACK: TechStack[] = [
   { key: "react", title: "React", href: "https://react.dev/" },
   { key: "tailwindcss", title: "Tailwind CSS", href: "https://tailwindcss.com/" },
   { key: "nodedotjs", title: "Node.js", href: "https://nodejs.org/" },
+  { key: "fastapi", title: "FastAPI", href: "https://fastapi.tiangolo.com/" },
+  { key: "scikitlearn", title: "scikit-learn", href: "https://scikit-learn.org/", whiteOnDark: true },
+  { key: "mariadb", title: "MariaDB", href: "https://mariadb.org/" },
+  { key: "plotly", title: "Plotly Dash", href: "https://dash.plotly.com/" },
+  { key: "kubernetes", title: "Kubernetes", href: "https://kubernetes.io/" },
 ];

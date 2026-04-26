@@ -40,7 +40,7 @@ export function Overview() {
         </OverviewItem>
 
         <OverviewItem icon={GraduationCapIcon}>
-          Étudiant en BUT Informatique — IUT2 Grenoble
+          Étudiant en M2 MIASHS à l'Université Grenoble Alpes
         </OverviewItem>
 
         <div className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">

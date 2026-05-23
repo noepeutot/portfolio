@@ -51,6 +51,8 @@ export function ProjectCarousel({
 
   if (total === 0) return null;
 
+  const isAnimated = (src: string) => /\.gif($|\?)/i.test(src);
+
   return (
     <div className="space-y-2">
       <div className="group relative overflow-hidden rounded-md border border-line bg-muted/30">
@@ -75,6 +77,7 @@ export function ProjectCarousel({
                 sizes="(min-width: 1024px) 720px, 100vw"
                 className="h-auto w-full object-contain"
                 priority={i === 0}
+                unoptimized={isAnimated(src)}
               />
             </button>
           ))}
@@ -129,6 +132,7 @@ export function ProjectCarousel({
                   height={80}
                   sizes="56px"
                   className="h-full w-full object-cover"
+                  unoptimized={isAnimated(src)}
                 />
               </button>
             </li>
@@ -178,6 +182,7 @@ export function ProjectCarousel({
               sizes="100vw"
               className="object-contain"
               priority
+              unoptimized={isAnimated(images[index])}
             />
 
             {total > 1 && (
@@ -229,6 +234,7 @@ export function ProjectCarousel({
                         height={80}
                         sizes="56px"
                         className="h-full w-full object-cover"
+                        unoptimized={isAnimated(src)}
                       />
                     </button>
                   </li>

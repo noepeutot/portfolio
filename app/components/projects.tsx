@@ -1,11 +1,92 @@
-import { BoxIcon, InfinityIcon, LinkIcon, UsersIcon } from "lucide-react";
-import { PROJECTS } from "@/app/data/projects";
+"use client";
+
+import {
+  BoxIcon,
+  GaugeIcon,
+  InfinityIcon,
+  LinkIcon,
+  TrophyIcon,
+  UsersIcon,
+} from "lucide-react";
+import Image from "next/image";
+import { PROJECTS, type Project } from "@/app/data/projects";
 import { Collapsible } from "./collapsible";
-import { IconBadge } from "./icon-badge";
 import { MarkdownContent } from "./markdown-content";
 import { Panel, PanelHeader, PanelTitle } from "./panel";
 import { ProjectCarousel } from "./project-carousel";
 import { Tag } from "./tag";
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mb-2 flex items-center gap-2">
+      <span className="h-px w-3 bg-foreground/30" />
+      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+        {children}
+      </span>
+      <span className="h-px flex-1 bg-line" />
+    </div>
+  );
+}
+
+function ProjectSections({ project }: { project: Project }) {
+  const { missions, role, results } = project;
+  return (
+    <div className="space-y-5 font-mono text-sm">
+      {missions && missions.length > 0 && (
+        <section>
+          <SectionLabel>Missions</SectionLabel>
+          <ul className="space-y-1.5 text-foreground">
+            {missions.map((m, i) => (
+              <li key={i} className="flex gap-2 text-pretty">
+                <span aria-hidden className="select-none text-muted-foreground">
+                  ›
+                </span>
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {role && (
+        <section>
+          <SectionLabel>Mon rôle</SectionLabel>
+          <p className="border-l-2 border-foreground/40 pl-3 italic text-foreground text-pretty">
+            {role}
+          </p>
+        </section>
+      )}
+
+      {results && results.length > 0 && (
+        <section className="rounded-md border border-line bg-accent-muted px-4 py-3">
+          <SectionLabel>Résultats</SectionLabel>
+          <ul className="space-y-2">
+            {results.map((r, i) => {
+              const Icon =
+                r.highlight === "award"
+                  ? TrophyIcon
+                  : r.highlight === "metric"
+                  ? GaugeIcon
+                  : null;
+              return (
+                <li key={i} className="flex items-start gap-2.5 text-foreground text-pretty">
+                  {Icon ? (
+                    <Icon className="mt-0.5 size-4 shrink-0 text-foreground/80" />
+                  ) : (
+                    <span aria-hidden className="select-none text-muted-foreground">
+                      ›
+                    </span>
+                  )}
+                  <span>{r.text}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+    </div>
+  );
+}
 
 export function Projects() {
   return (
@@ -31,7 +112,22 @@ export function Projects() {
                 defaultOpen={project.isExpanded}
                 trigger={
                   <div className="flex items-center hover:bg-accent-muted">
-                    <IconBadge icon={BoxIcon} className="mx-4 select-none" />
+                    {project.logo ? (
+                      <div className="relative mx-4 flex size-10 shrink-0 items-center justify-center select-none">
+                        <Image
+                          src={project.logo}
+                          alt={`Logo ${project.title}`}
+                          fill
+                          sizes="40px"
+                          className="object-contain p-1"
+                          unoptimized
+                        />
+                      </div>
+                    ) : (
+                      <div className="mx-4 flex size-10 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-line ring-offset-1 ring-offset-background select-none">
+                        <BoxIcon className="size-5" />
+                      </div>
+                    )}
 
                     <div className="flex-1 border-l border-dashed border-line">
                       <div className="flex w-full items-center gap-2 p-4 pr-2 text-left">
@@ -88,8 +184,12 @@ export function Projects() {
                   </div>
                 }
               >
-                <div className="space-y-3 border-t border-line p-4">
+                <div className="space-y-4 border-t border-line p-4">
                   <MarkdownContent>{project.description}</MarkdownContent>
+
+                  {(project.missions || project.role || project.results) && (
+                    <ProjectSections project={project} />
+                  )}
 
                   {project.images && project.images.length > 0 && (
                     <ProjectCarousel

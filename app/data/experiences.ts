@@ -53,7 +53,7 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Stage",
         icon: "code",
         description:
-          "Solution de maintenance prédictive pour optimiser les tournées de réapprovisionnement d'un parc de 35 000+ machines et réduire les pertes.\n\n- Pipeline ETL de nettoyage et génération de séries temporelles (Python, MariaDB)\n- Modèle ML de prédiction du taux de consommation journalier (scikit-learn, gradient boosting)\n- API asynchrone d'entraînement et de prédiction (FastAPI)\n- Interface de visualisation et de pilotage du pipeline (React, TypeScript, Tailwind)\n- Conteneurisation Docker et déploiement Kubernetes avec CI/CD GitLab",
+          "Solution de maintenance prédictive pour optimiser les tournées de réapprovisionnement d'un parc de 35 000+ machines et réduire les pertes.\n\n- Pipeline ETL de nettoyage et génération de séries temporelles (Python, MariaDB)\n- Modèle ML de prédiction du taux de consommation journalier (scikit-learn, gradient boosting)\n- API asynchrone d'entraînement et de prédiction (FastAPI)\n- Interface de visualisation et de pilotage du pipeline (React, TypeScript, Tailwind)\n- Conteneurisation Docker et déploiement via CI/CD GitLab",
         skills: [
           "Python",
           "MariaDB",
@@ -63,7 +63,6 @@ export const EXPERIENCES: Experience[] = [
           "TypeScript",
           "Tailwind CSS",
           "Docker",
-          "Kubernetes",
           "GitLab CI/CD",
         ],
         isExpanded: true,

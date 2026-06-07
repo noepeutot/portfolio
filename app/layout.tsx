@@ -22,16 +22,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Noé Peutot — Développeur Web Fullstack",
+  title: "Noé Peutot — Développeur Full-Stack & IA",
   description:
-    "Portfolio de Noé Peutot, développeur web fullstack basé à Grenoble. Étudiant en BUT Informatique, passionné par le développement web et les nouvelles technologies.",
+    "Portfolio de Noé Peutot, développeur full-stack & IA appliquée, en fin de Master Informatique & Cognition (Grenoble).",
   keywords: [
     "Noé Peutot",
     "développeur web",
     "fullstack",
     "Grenoble",
     "portfolio",
-    "BUT Informatique",
+    "Master MIASHS",
+    "Informatique et Cognition",
+    "IA appliquée",
+    "machine learning",
+    "LLM",
   ],
 };
 

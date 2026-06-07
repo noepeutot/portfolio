@@ -2,9 +2,9 @@ export const USER = {
   firstName: "Noé",
   lastName: "Peutot",
   displayName: "Noé Peutot",
-  jobTitle: "Développeur Web Full-Stack",
+  jobTitle: "Développeur Full-Stack & IA",
   flipSentences: [
-    "Développeur Web Full-Stack",
+    "Développeur Full-Stack & IA",
     "Cognition · IA appliquée · Ergonomie",
     "De la bioinformatique à l'industrie",
   ],

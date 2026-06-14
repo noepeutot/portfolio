@@ -28,6 +28,7 @@ export const PROJECTS: Project[] = [
     skills: ["Node.js", "JavaScript", "WebSocket", "MongoDB", "Cordova", "HTML/CSS"],
     context: "Master M2 — Programmation Web Client 2 (UGA)",
     team: "5 personnes",
+    link: "https://github.com/noepeutot/TronGame",
     description:
       "Application web et mobile (Cordova/Android) permettant de jouer à Tron en solo ou en multijoueur (jusqu'à 4 joueurs) en temps réel. Architecture client-serveur avec logique de jeu centralisée côté serveur, communication WebSocket et persistance des comptes, statistiques et historique des parties.",
     missions: [
@@ -38,6 +39,14 @@ export const PROJECTS: Project[] = [
       "Coordination technique au sein de l'équipe : gestion des merges et débogage en appui des autres membres",
     ],
     role: "Développeur principal côté serveur et contributeur frontend, avec un rôle de référent technique auprès de l'équipe",
+    images: [
+      "/projects/tron/Home.png",
+      "/projects/tron/Login.png",
+      "/projects/tron/Lobby1.png",
+      "/projects/tron/Lobby2.png",
+      "/projects/tron/Game.png",
+      "/projects/tron/Leaderboard.png",
+    ],
   },
   {
     id: "multimodal-classification",
@@ -86,6 +95,7 @@ export const PROJECTS: Project[] = [
     skills: ["PHP", "Laravel", "TailwindCSS", "SQLite"],
     context: "Master M1 — Programmation Web (UGA)",
     team: "3 personnes",
+    link: "https://github.com/noepeutot/BeeCook",
     logo: "/projects/beecook/logo.png",
     description:
       "Développement complet d'un site web de recettes culinaires avec front-office public et back-office administrateur. Projet pédagogique visant à mettre en œuvre l'ensemble du cycle d'une application web Laravel : modélisation des données, CRUD complet, gestion d'uploads médias, système d'authentification multi-rôles et direction artistique soignée.",
@@ -123,7 +133,7 @@ export const PROJECTS: Project[] = [
     skills: ["JavaScript", "HTML/CSS", "Algorithmes", "Node.js"],
     context: "Master M1 — Intelligence Artificielle (UGA)",
     team: "3 personnes",
-    link: "https://github.com/noepeutot/Projet-IA",
+    link: "https://github.com/noepeutot/MazeRunner",
     description:
       "Jeu de labyrinthe sur navigateur web avec génération procédurale et résolution algorithmique. Deux modes de jeu : speedrun chronométré et joueur contre IA.",
     missions: [
@@ -174,6 +184,7 @@ export const PROJECTS: Project[] = [
     skills: ["PHP", "PostgreSQL", "PL/pgSQL", "BCrypt", "RGPD", "Node.js", "Socket.io", "THREE.js", "Stripe API"],
     context: "BUT2 — Projet d'équipe (IUT2 Grenoble)",
     team: "6 personnes",
+    link: "https://github.com/noepeutot/Space-Charity",
     logo: "/projects/spacecharity/logo.png",
     description:
       "Plateforme web (PWA) d'enchères caritatives en temps réel sur des planètes importées depuis l'API NASA, dans un scénario fictif de reversement à des associations environnementales. Cycle complet couvert : analyse du besoin, conception, développement, tests qualité, déploiement HTTPS et soutenance.",

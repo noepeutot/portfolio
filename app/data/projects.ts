@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
   {
     id: "stroop-experiment",
     title: "Plateforme d'expérimentation comportementale",
-    period: { start: "2024", end: "2024" },
+    period: { start: "2024", end: "2025" },
     skills: ["JavaScript", "HTML", "CSS", "R", "Modèles mixtes"],
     context: "Master M1 — Outils et méthodes en sciences cognitives (UGA)",
     team: "2 personnes",
@@ -137,10 +137,10 @@ export const PROJECTS: Project[] = [
     description:
       "Jeu de labyrinthe sur navigateur web avec génération procédurale et résolution algorithmique. Deux modes de jeu : speedrun chronométré et joueur contre IA.",
     missions: [
-      "4 algorithmes de génération : Recursive Backtracking, aléatoire, Prim, Kruskal",
-      "4 algorithmes de résolution : BFS, DFS, A* (heuristique de Manhattan) et Dijkstra",
-      "Mode Player vs IA avec 3 niveaux de difficulté et visualisation temps réel du chemin sur le labyrinthe",
-      "Suite de benchmarks Node.js mesurant temps d'exécution, mémoire et nœuds explorés sur labyrinthes 10×10, 50×50 et 100×100",
+      "Implémentation de 4 algorithmes de génération : Recursive Backtracking, aléatoire, Prim et Kruskal",
+      "Implémentation de 4 algorithmes de résolution : BFS, DFS, A* (heuristique de Manhattan) et Dijkstra",
+      "Développement du mode Player vs IA avec 3 niveaux de difficulté et visualisation temps réel du chemin",
+      "Développement d'une suite de benchmarks Node.js mesurant temps d'exécution, mémoire et nœuds explorés (labyrinthes 10×10 à 100×100)",
     ],
     role: "Génération de labyrinthe (Recursive Backtracking, Prim, Kruskal), résolutions BFS, A* et Dijkstra, développement des interfaces et de la suite de benchmarks",
     images: [

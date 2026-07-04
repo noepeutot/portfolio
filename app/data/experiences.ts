@@ -34,7 +34,7 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Stage",
         icon: "code",
         description:
-          "Système multi-agents local pour interroger un parc de 35 000+ machines en langage naturel (FR/EN), intégré à un chat Open-WebUI.\n\n- Découpage de la requête et dispatch parallèle vers 4 agents de domaine spécialisés, dont les sorties sont fusionnées en une requête unique (LangGraph, Ollama, Elasticsearch)\n- Fiabilisation des sorties LLM par schéma contraint, validation et retry (Pydantic)\n- Construction dynamique de requêtes avec géocoding, pagination scalable et export CSV (Elasticsearch, Google Maps API)\n- Suite de tests automatisés et jeu d'évaluation de 1 000+ requêtes FR/EN (pytest)\n- Tracing, logs structurés et garde-fous anti-abus (LangFuse, Grafana)",
+          "Assistant conversationnel 100 % local pour interroger un parc de 35 000+ machines en langage naturel (FR/EN), en remplacement des recherches à filtres. Aucune donnée ne quitte l'infrastructure du groupe.\n\n- Architecture multi-agents : filtrage des demandes, découpage par domaine, 4 agents en parallèle et assemblage des requêtes (LangGraph, Ollama)\n- Fiabilisation des réponses : validation des sorties du modèle et relance automatique (Pydantic)\n- Moteur de recherche : géocodage, recherche par rayon et export CSV complet (Elasticsearch, Google Maps API)\n- Évaluation sur un jeu de 2 000 requêtes FR/EN et benchmark de plusieurs modèles (Pytest, LangFuse)\n- API asynchrone avec réponse en streaming dans le chat Open-WebUI (FastAPI, SSE)",
         skills: [
           "Python",
           "LangGraph",
@@ -42,9 +42,10 @@ export const EXPERIENCES: Experience[] = [
           "Pydantic",
           "FastAPI",
           "Elasticsearch",
-          "Open-WebUI",
-          "pytest",
           "LangFuse",
+          "Open-WebUI",
+          "Docker",
+          "Pytest",
         ],
         isExpanded: true,
       },
@@ -55,7 +56,7 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Stage",
         icon: "code",
         description:
-          "Solution de maintenance prédictive pour optimiser les tournées de réapprovisionnement d'un parc de 35 000+ machines et réduire les pertes.\n\n- Pipeline ETL de nettoyage et génération de séries temporelles (Python, MariaDB)\n- Modèle ML de prédiction du taux de consommation journalier (scikit-learn, gradient boosting)\n- API asynchrone d'entraînement et de prédiction (FastAPI)\n- Interface de visualisation et de pilotage du pipeline (React, TypeScript, Tailwind)\n- Conteneurisation Docker et déploiement via CI/CD GitLab",
+          "Solution de maintenance prédictive pour optimiser les tournées de réapprovisionnement d'un parc de 35 000+ machines et réduire les pertes.\n\n- Pipeline ETL de nettoyage et génération de séries temporelles (Python, MariaDB)\n- Modèle ML de prédiction du taux de consommation journalier (scikit-learn, gradient boosting)\n- API asynchrone d'entraînement et de prédiction (FastAPI)\n- Interface de visualisation et de pilotage du pipeline (React, TypeScript, TailwindCSS)\n- Conteneurisation Docker et déploiement Kubernetes via CI/CD GitLab",
         skills: [
           "Python",
           "MariaDB",
@@ -63,8 +64,9 @@ export const EXPERIENCES: Experience[] = [
           "FastAPI",
           "React",
           "TypeScript",
-          "Tailwind CSS",
+          "TailwindCSS",
           "Docker",
+          "Kubernetes",
           "GitLab CI/CD",
         ],
         isExpanded: true,
